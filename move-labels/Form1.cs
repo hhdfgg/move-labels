@@ -27,21 +27,27 @@ namespace move_labels
 
             if(label1.Left<=0)
             {
-                vx = 10;
+                vx = Math.Abs(vx);
             }
-            else if(label1.Left>=406){
-                vx=-10;
+            if(label1.Left > ClientSize.Width-label1.Width)
+            {
+                vx = -Math.Abs(vx);
+               
             }
-   
 
             if(label1.Top<=0)
             {
-                vy = 10;
+                vy = Math.Abs(vy);
             }
-            else if(label1.Top>=365)
+            if(label1.Top > ClientSize.Height-label1.Height)
             {
-                vy = -10;
+                vy = -Math.Abs(vy);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
