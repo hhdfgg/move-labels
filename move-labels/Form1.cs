@@ -29,9 +29,18 @@ namespace move_labels
             {
                 vx = 10;
             }
+            else if(label1.Left>=406){
+                vx=-10;
+            }
+   
+
             if(label1.Top<=0)
             {
                 vy = 10;
+            }
+            else if(label1.Top>=365)
+            {
+                vy = -10;
             }
         }
     }
