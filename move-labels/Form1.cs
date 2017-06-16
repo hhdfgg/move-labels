@@ -22,6 +22,26 @@ namespace move_labels
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // 2次元クラスPoint型の変数cposを宣言
+            Point cpos;
+
+            // cposに、マウスのフォーム座標を取り出す。
+            //// MousePositionにマウス座標のスクリーン左上からのX、Yが入っている。
+            //// PointToClient()を使うと、スクリーン座標を、フォーム座標に変換できる。
+            cpos = PointToClient(MousePosition);
+
+            // ラベルに座標を表示
+            //// 変換したフォーム座標は、cpos.X、cpos.Yで取り出せる。
+            label2.Text = "" + cpos.X + "," + cpos.Y;
+            label3.Text = "" + MousePosition.X + "," + MousePosition.Y;
+
+            //新しく作ったラベルをマウスカーソルの場所に移動
+            //それができたら、マウスカーソルがそのラベルの中心を指すようにする
+            label4.Left = cpos.X-label4.Width/2;
+            label4.Top = cpos.Y-label4.Height/2;
+            
+
+
             label1.Left += vx;
             label1.Top += vy;
 
